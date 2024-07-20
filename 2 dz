@@ -1,0 +1,131 @@
+#1 task
+a = int(input("1st number: "))
+b = int(input("2nd number: "))
+c = int(input("3d number: "))
+print("1. Summarize \n2. Multiply")
+answer = int(input("Your answer: "))
+if answer == 1:
+    print("a + b + c =", a + b + c)
+elif answer == 2:
+    print("a * b * c =", a * b * c)
+else:
+    print("Your answer doesnt match")
+    
+#2 task
+print("1. Find max \n2. Find min \n3. Find average")
+answer = int(input("Your answer: "))
+if answer == 1:
+    if a >= b and a >= c:
+        print("max =", a)
+    elif b >= a and b >= c:
+        print("max =", b)
+    else:
+        print("max =", c)
+elif answer == 2:
+    if a <= b and a <= c:
+        print("min =", a)
+    elif b <= a and b <= c:
+        print("min =", b)
+    else:
+        print("min =", c)
+elif answer == 3:
+    print("Average =", (a + b + c) / 3)
+else:
+    print("Your answer doesnt match")
+
+#3 task
+metres = float(input("Metres: "))
+print("Convert to: \n1. Inches \n2. Miles \n3. Yards")
+answer = int(input("Your answer: "))
+if answer == 1:
+    print(metres, "metres =", metres * 39.37008, "inches")
+elif answer == 2:
+    print(metres, "metres =", metres * 0.000621, "miles")
+elif answer == 3:
+    print(metres, "metres =", metres * 1.093613, "yards")
+else:
+    print("Your answer doesnt match")
+
+#4 task
+answer = int(input("Number of the day in a week: "))
+if answer == 1:
+    print("Monday")
+elif answer == 2:
+    print("Tuesday")
+elif answer == 3:
+    print("Wednesday")
+elif answer == 4:
+    print("Thirsday")
+elif answer == 5:
+    print("Friday")
+elif answer == 6:
+    print("Saturday")
+elif answer == 7:
+    print("Sunday")
+else:
+    print("We have only 7 days in a week dude")
+
+#5 task
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+answer = int(input("Number of a month: "))
+if 12 >= answer >= 1:
+    print(months[answer - 1])
+else:
+    print("12 months dude")
+
+#6 task
+a = int(input("Number: "))
+if a > 0:
+    print("Number is positive")
+elif a < 0:
+    print("Number is negative")
+else:
+    print("Number equals 0")
+
+#7 task
+numb = int(input("Number(1 to 100): "))
+if 100 >= numb >= 1:
+    if numb % 3 == 0:
+        print("Fizz")
+    if numb % 5 == 0:
+        print("Buzz")
+    if not(numb % 3 == 0 and numb % 5 == 0):
+        print(numb)
+else:
+    print("Your number should be between 1 and 100")
+        
+#8 task
+numb = int(input("Your number: "))
+degree = int(input("Degree(0 to 7): "))
+if 7 >= degree >= 0:
+    print(numb ** degree)
+else:
+    print("Degree should be between 0 and 7")
+
+#9 task
+#не поняла задание
+
+#10 task
+sale_1 = int(input("Sale 1: "))
+sale_2 = int(input("Sale 2: "))
+sale_3 = int(input("Sale 3: "))
+
+sales = [sale_1, sale_2, sale_3]
+maximum = 0
+for i in range(3):
+    if sales[i] < 500:
+        sales[i] = 200 + 0.03 * sales[i]
+    elif 1000 >= sales[i] >= 500:
+        sales[i] = 200 + 0.05 * sales[i]
+    elif sales[i] > 1000:
+        sales[i] = 200 + 0.08 * sales[i]
+    else:
+        print("Sales should be between 0 and +infinity")
+        
+    if sales[i] >= maximum:
+        maximum = sales[i]
+        best_manager = i
+
+print("1st manager: ", sales[0], "$; ", "2nd manager: ", sales[1], "$; ", "3d manager: ", sales[2], "$")
+print("Best manager is the", best_manager + 1, "one")
+print(best_manager + 1, "managers new salary is ", sales[best_manager] + 200, "$")
